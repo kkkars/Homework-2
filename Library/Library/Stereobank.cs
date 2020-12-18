@@ -9,9 +9,7 @@ namespace Library
         public Stereobank()
         {
             Name = "Stereobank";
-            AvailableCards.Add("Black");
-            AvailableCards.Add("White");
-            AvailableCards.Add("Iron");
+            AvailableCards = new List<string> { "Black", "White", "Iron" };
         }
     }
 }

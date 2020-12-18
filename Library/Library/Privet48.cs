@@ -9,8 +9,7 @@ namespace Library
         public Privet48()
         {
             Name = "Privet48";
-            AvailableCards.Add("Gold");
-            AvailableCards.Add("Platinum");
+            AvailableCards = new List<string> { "Gold", "Platinum" };
         }
     }
 }
