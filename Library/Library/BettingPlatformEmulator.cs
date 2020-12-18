@@ -132,17 +132,39 @@ namespace Library
         }
         private void CollectInformationForNewAccount(ref string firstName, ref string lastName, ref string email, ref string password, ref string currency)
         {
-            Console.Write("Please, enter the information below to register:\nFirst name: ");
-            firstName = Console.ReadLine();
-            Console.Write("Last name: ");
-            lastName = Console.ReadLine();
-            Console.Write("Email: ");
-            email = Console.ReadLine();
-            Console.Write("Password: ");
-            password = Console.ReadLine();
+            bool isCorrect;
+            Console.WriteLine("Please, enter the information below to register:");
+            do
+            {
+                Console.Write("First name: ");
+                firstName = Console.ReadLine();
+                if(firstName.Length == 0)
+                    Console.WriteLine("Wrong input. First name can't be empty");
+            } while (firstName.Length==0);
+            do 
+            {
+                Console.Write("Last name: ");
+                lastName = Console.ReadLine();
+                if (lastName.Length == 0)
+                    Console.WriteLine("Wrong input. Last name can't be empty");
+            } while (lastName.Length == 0);
+            do
+            {
+                Console.Write("Email: ");
+                email = Console.ReadLine();
+                if (email.Length == 0)
+                    Console.WriteLine("Wrong input. Email can't be empty");
+            } while (email.Length == 0);
+            do
+            {
+                Console.Write("Password: ");
+                password = Console.ReadLine();
+                if(password.Length==0)
+                    Console.WriteLine("Wrong input. Password can't be empty");
+            } while (password.Length == 0);
 
             Console.Write("Great! And the last step, choose one of the avialible currency(EUR, USD, UAH): \n");
-            bool isCorrect;
+            
             do
             {
                 Console.Write("Currency: ");
@@ -158,10 +180,21 @@ namespace Library
         }
         private void CollectInformationToLogin(ref string login, ref string password)
         {
-            Console.Write("To login enter your login and password please:\n    Login: ");
-            login = Console.ReadLine();
-            Console.Write("    Password: ");
-            password = Console.ReadLine();
+            Console.WriteLine("To login enter your login and password please:");
+            do
+            {
+                Console.Write("Login: ");
+                login = Console.ReadLine();
+                if(login.Length==0)
+                    Console.WriteLine("Wrong input. Login can't be empty");
+            } while (login.Length == 0);
+            do
+            {
+                Console.Write("Password: ");
+                password = Console.ReadLine();
+                if(password.Length==0)
+                    Console.WriteLine("Wrong input. Password can't be empty");
+            } while (password.Length == 0);
         }
         private void CollectInformationForTransaction(ref decimal amount, ref string currency)
         {

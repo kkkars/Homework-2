@@ -35,10 +35,21 @@ namespace Library
         private void CollectAndCheckInfoToLogIn(ref string login, ref string password)
         {
             Console.WriteLine($"Welcome, dear client, to the online bank {Name}");
-            Console.Write("Please, enter your login : ");
-            login = Console.ReadLine();
-            Console.Write("Please, enter your password: ");
-            password = Console.ReadLine();
+            Console.WriteLine("Please, enter your login and password: ");
+            do
+            {
+                Console.Write("    Login: ");
+                login = Console.ReadLine();
+                if (login.Length == 0)
+                    Console.WriteLine("Wrong input. Login can't be empty");
+            } while (login.Length == 0);
+            do
+            {
+                Console.Write("    Password: ");
+                password = Console.ReadLine();
+                if(password.Length==0)
+                    Console.WriteLine("Wrong input. Password can't be empty");
+            } while (password.Length == 0);
         }
         private void PickCardForTransaction(ref int choice)
         {
